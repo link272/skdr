@@ -1,0 +1,64 @@
+{% extends "webpage/base.html" %}
+{% load static %}
+{% block content %}
+<h2>Number of total links found: {{data.total}}</h2>
+<a href="{% url 'history' urlId=data.url_hash %}" class="button">History</a>
+
+<h2>Number of http links found: {{ data.nb_http }}</h2>
+
+<table>
+<thead>
+<tr>
+    <th>Name</th>
+</tr>
+</thead>
+<tbody>
+
+{% for item in data.http %}
+<tr>
+    <td>{{ item }}</td>
+</tr>
+
+{% endfor %}
+</tbody>
+</table>
+
+<h2>Number of email links found: {{ data.nb_email }}</h2>
+
+<table>
+<thead>
+<tr>
+    <th>Name</th>
+</tr>
+</thead>
+<tbody>
+
+{% for item in data.email %}
+<tr>
+    <td>{{ item }}</td>
+</tr>
+
+{% endfor %}
+</tbody>
+</table>
+
+<h2>Number of tel links found: {{ data.nb_tel }}</h2>
+
+<table>
+<thead>
+<tr>
+    <th>Name</th>
+</tr>
+</thead>
+<tbody>
+
+{% for item in data.tel %}
+<tr>
+    <td>{{ item }}</td>
+</tr>
+
+{% endfor %}
+</tbody>
+</table>
+
+{% endblock %}

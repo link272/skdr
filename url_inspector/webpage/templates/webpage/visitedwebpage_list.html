@@ -1,0 +1,46 @@
+{% extends "webpage/base.html" %}
+{% block content %}
+
+<table>
+<thead>
+<tr>
+    <th>date</th>
+    <th>http</th>
+    <th>mail</th>
+    <th>tel</th>
+
+</tr>
+</thead>
+<tbody>
+
+{% for item in object_list %}
+<tr>
+    <td>{{ item.visited_at }}</td>
+    <td>{{ item.nb_http_link }}</td>
+    <td>{{ item.nb_mail_link }}</td>
+    <td>{{ item.nb_tel_link }}</td>
+
+</tr>
+
+{% endfor %}
+</tbody>
+</table>
+
+<!-- <canvas id="line-chart" width="800" height="450"></canvas>
+<script>
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+    datasets: [{
+        data: [86,114,106,106,107,111,133,221,783,2478],
+        label: "Africa",
+        borderColor: "#3e95cd",
+        fill: false
+      }
+    ]
+  },
+});
+</script> -->
+
+{% endblock content %}
