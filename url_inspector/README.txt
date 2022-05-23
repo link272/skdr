@@ -1,3 +1,7 @@
+BUILD
+
+docker-compose up
+
 TEST FRONT
 
 http://localhost:8000/
